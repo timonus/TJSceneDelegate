@@ -24,3 +24,4 @@ I've held out on the scene-based lifecycle in [all of my apps](https://apps.appl
 ```
 
 - Remove any creation of `UIWindow`s/`makeKeyAndVisible` calls in your app delegate.
+- Remove `window.rootViewController = ...` from your app delegate.
