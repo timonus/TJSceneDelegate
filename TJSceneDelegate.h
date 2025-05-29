@@ -5,7 +5,7 @@
 //  Copyright © 2025 Tim Johnsen. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
