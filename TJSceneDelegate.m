@@ -94,7 +94,9 @@
         options[UIApplicationOpenURLOptionsSourceApplicationKey] = context.options.sourceApplication;
         options[UIApplicationOpenURLOptionsAnnotationKey] = context.options.annotation;
         options[UIApplicationOpenURLOptionsOpenInPlaceKey] = @(context.options.openInPlace);
-        options[UIApplicationOpenURLOptionsEventAttributionKey] = context.options.eventAttribution;
+        if (@available(iOS 14.5, *)) {
+            options[UIApplicationOpenURLOptionsEventAttributionKey] = context.options.eventAttribution;
+        }
         [[[UIApplication sharedApplication] delegate] application:[UIApplication sharedApplication]
                                                           openURL:context.URL
                                                           options:options];
