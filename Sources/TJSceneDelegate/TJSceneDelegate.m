@@ -5,7 +5,7 @@
 //  Copyright © 2025 Tim Johnsen. All rights reserved.
 //
 
-#import "TJSceneDelegate.h"
+#import "include/TJSceneDelegate.h"
 #import <UserNotifications/UserNotifications.h>
 
 @implementation TJSceneDelegate {
