@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol TJAppDelegate <UIApplicationDelegate>
 
 - (UIViewController *)appWindowRootViewController;
-- (UIWindow *)window;
 
 @end
 
