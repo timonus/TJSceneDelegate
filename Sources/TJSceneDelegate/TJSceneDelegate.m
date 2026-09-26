@@ -26,7 +26,10 @@
 - (void)sceneDidBecomeActive:(UIScene *)scene
 {
     if ([[[UIApplication sharedApplication] delegate] respondsToSelector:@selector(applicationDidBecomeActive:)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [[[UIApplication sharedApplication] delegate] applicationDidBecomeActive:[UIApplication sharedApplication]];
+#pragma clang diagnostic pop
     }
     
     if (_pendingOptions) {
@@ -66,14 +69,20 @@
 - (void)sceneWillResignActive:(UIScene *)scene
 {
     if ([[[UIApplication sharedApplication] delegate] respondsToSelector:@selector(applicationWillResignActive:)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [[[UIApplication sharedApplication] delegate] applicationWillResignActive:[UIApplication sharedApplication]];
+#pragma clang diagnostic pop
     }
 }
 
 - (void)sceneWillEnterForeground:(UIScene *)scene
 {
     if ([[[UIApplication sharedApplication] delegate] respondsToSelector:@selector(applicationWillEnterForeground:)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [[[UIApplication sharedApplication] delegate] applicationWillEnterForeground:[UIApplication sharedApplication]];
+#pragma clang diagnostic pop
     }
 }
 
@@ -91,6 +100,8 @@
     }
     for (UIOpenURLContext *context in contexts) {
         NSMutableDictionary<UIApplicationOpenURLOptionsKey, id> *const options = [NSMutableDictionary new];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         options[UIApplicationOpenURLOptionsSourceApplicationKey] = context.options.sourceApplication;
         options[UIApplicationOpenURLOptionsAnnotationKey] = context.options.annotation;
         options[UIApplicationOpenURLOptionsOpenInPlaceKey] = @(context.options.openInPlace);
@@ -100,57 +111,76 @@
         [[[UIApplication sharedApplication] delegate] application:[UIApplication sharedApplication]
                                                           openURL:context.URL
                                                           options:options];
+#pragma clang diagnostic pop
     }
 }
 
 - (void)scene:(UIScene *)scene willContinueUserActivityWithType:(NSString *)userActivityType
 {
     if ([[[UIApplication sharedApplication] delegate] respondsToSelector:@selector(application:willContinueUserActivityWithType:)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [[[UIApplication sharedApplication] delegate] application:[UIApplication sharedApplication]
                                  willContinueUserActivityWithType:userActivityType];
+#pragma clang diagnostic pop
     }
 }
 
 - (void)scene:(UIScene *)scene continueUserActivity:(NSUserActivity *)userActivity
 {
     if ([[[UIApplication sharedApplication] delegate] respondsToSelector:@selector(application:continueUserActivity:restorationHandler:)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [[[UIApplication sharedApplication] delegate] application:[UIApplication sharedApplication]
                                              continueUserActivity:userActivity
                                                restorationHandler:^(NSArray<id<UIUserActivityRestoring>> * _Nullable restorableObjects) {}];
+#pragma clang diagnostic pop
     }
 }
 
 - (void)scene:(UIScene *)scene didFailToContinueUserActivityWithType:(NSString *)userActivityType error:(NSError *)error
 {
     if ([[[UIApplication sharedApplication] delegate] respondsToSelector:@selector(application:didFailToContinueUserActivityWithType:error:)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [[[UIApplication sharedApplication] delegate] application:[UIApplication sharedApplication]
                             didFailToContinueUserActivityWithType:userActivityType
                                                             error:error];
+#pragma clang diagnostic pop
     }
 }
 
 - (void)scene:(UIScene *)scene didUpdateUserActivity:(NSUserActivity *)userActivity
 {
     if ([[[UIApplication sharedApplication] delegate] respondsToSelector:@selector(application:didUpdateUserActivity:)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [[[UIApplication sharedApplication] delegate] application:[UIApplication sharedApplication]
                                             didUpdateUserActivity:userActivity];
+#pragma clang diagnostic pop
     }
 }
 
 - (void)windowScene:(UIWindowScene *)windowScene performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
 {
     if ([[[UIApplication sharedApplication] delegate] respondsToSelector:@selector(application:performActionForShortcutItem:completionHandler:)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [[[UIApplication sharedApplication] delegate] application:[UIApplication sharedApplication]
                                      performActionForShortcutItem:shortcutItem
                                                 completionHandler:completionHandler];
+#pragma clang diagnostic pop
     }
 }
 
 - (void)windowScene:(UIWindowScene *)windowScene userDidAcceptCloudKitShareWithMetadata:(CKShareMetadata *)cloudKitShareMetadata
 {
     if ([[[UIApplication sharedApplication] delegate] respondsToSelector:@selector(application:userDidAcceptCloudKitShareWithMetadata:)]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [[[UIApplication sharedApplication] delegate] application:[UIApplication sharedApplication]
                            userDidAcceptCloudKitShareWithMetadata:cloudKitShareMetadata];
+#pragma clang diagnostic pop
     }
 }
 
